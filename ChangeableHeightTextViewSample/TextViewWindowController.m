@@ -27,7 +27,7 @@
     [_myTextView didChangeText];    // 開始時にUIを更新しておく
 }
 
-// MARK:- TextView Delegate Methods
+// MARK:- ChangeableHeightTextViewDelegate Delegate Methods
 // TextView内のテキストが変更されたときに呼ばれる
 - (void)ChangeableHeightTextViewDidChange {
     NSRect windowFrame = self.window.frame;
