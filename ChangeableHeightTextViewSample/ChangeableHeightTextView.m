@@ -32,12 +32,9 @@ static const int kMaximumLineNum          = 100; // この行数以上では高�
  @brief NSTextViewの含まれるNSSCrollViewのframeのheightを更新する
  */
 - (void)updateScrollViewHeight {
-    NSScrollView *scrollView = (NSScrollView *) self.superview.superview;
-    NSRect frame = scrollView.frame;
-    
     // Calculate height
     NSUInteger numberOfLines = [self numberOfLines];
-    NSUInteger height        = frame.size.height;
+    NSUInteger height = 0;
     if (numberOfLines <= kMaximumLineNum) {
         height = kInitialStringHeight + (numberOfLines - 1) * kSingleByteStringHeight;  // 1行目の高さは固定としている
         if (height < kInitialStringHeight) {
@@ -46,9 +43,10 @@ static const int kMaximumLineNum          = 100; // この行数以上では高�
     }
     
     // Update height
+    NSScrollView *scrollView = (NSScrollView *) self.superview.superview;
+    NSRect frame      = scrollView.frame;
     frame.size.height = height;
-    
-    self.superview.superview.frame = frame;
+    scrollView.frame  = frame; // 実際のNSScrollViewのframeを更新
 }
 
 // テキストの変更時に呼ばれる
@@ -58,13 +56,15 @@ static const int kMaximumLineNum          = 100; // この行数以上では高�
     [self.delegate ChangeableHeightTextViewDidChange];   // 呼び出し元のWindowControllerでウィンドウの高さを変更する
 }
 
+/**
+ @brief NSTextViewの文字列の行数を計算する
+ */
 - (NSInteger)numberOfLines {
     NSLayoutManager *layoutManager = [self layoutManager];
-    NSUInteger numberOfLines;
-    NSUInteger index;
-    NSUInteger numberOfGlyphs = [layoutManager numberOfGlyphs];
-    NSRange    lineRange;
-    for (numberOfLines = 0, index = 0; index < numberOfGlyphs; numberOfLines++) {
+    NSUInteger      numberOfLines  = 0;     // 行数のカウント用変数
+    NSUInteger      numberOfGlyphs = [layoutManager numberOfGlyphs];
+    NSRange         lineRange;  // 現在対象となっている行の、先頭の開始位置と文字数
+    for (NSUInteger index = 0; index < numberOfGlyphs; numberOfLines++) {   // index: 現在見ている文字の位置
         (void) [layoutManager lineFragmentRectForGlyphAtIndex:index
                                                effectiveRange:&lineRange];
         index = NSMaxRange(lineRange);
