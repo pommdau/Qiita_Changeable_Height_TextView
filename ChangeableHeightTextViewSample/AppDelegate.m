@@ -7,16 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "TextViewWindowController.h"
 
 @interface AppDelegate ()
-
 @property (weak) IBOutlet NSWindow *window;
+@property (nonatomic, readonly) TextViewWindowController *textViewWindowController;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    // ViewControllerの作成とウィンドウを表示
+    TextViewWindowController *textViewWindowController = [[TextViewWindowController alloc] init];
+    [textViewWindowController showWindow:self];
+    _textViewWindowController = textViewWindowController;
 }
 
 
