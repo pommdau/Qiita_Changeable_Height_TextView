@@ -11,6 +11,9 @@
 		D0B4D8E32295278700453315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B4D8E22295278700453315 /* Assets.xcassets */; };
 		D0B4D8E62295278700453315 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B4D8E42295278700453315 /* MainMenu.xib */; };
 		D0B4D8E92295278700453315 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B4D8E82295278700453315 /* main.m */; };
+		D0B4D8F32295284000453315 /* TextViewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B4D8F02295284000453315 /* TextViewWindowController.m */; };
+		D0B4D8F42295284000453315 /* TextViewWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B4D8F12295284000453315 /* TextViewWindowController.xib */; };
+		D0B4D8F72295285400453315 /* ChangeableHeightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B4D8F52295285400453315 /* ChangeableHeightTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		D0B4D8E72295278700453315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0B4D8E82295278700453315 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0B4D8EA2295278700453315 /* ChangeableHeightTextViewSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChangeableHeightTextViewSample.entitlements; sourceTree = "<group>"; };
+		D0B4D8F02295284000453315 /* TextViewWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewWindowController.m; sourceTree = "<group>"; };
+		D0B4D8F12295284000453315 /* TextViewWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewWindowController.xib; sourceTree = "<group>"; };
+		D0B4D8F22295284000453315 /* TextViewWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewWindowController.h; sourceTree = "<group>"; };
+		D0B4D8F52295285400453315 /* ChangeableHeightTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeableHeightTextView.m; sourceTree = "<group>"; };
+		D0B4D8F62295285400453315 /* ChangeableHeightTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeableHeightTextView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,11 @@
 				D0B4D8E22295278700453315 /* Assets.xcassets */,
 				D0B4D8E42295278700453315 /* MainMenu.xib */,
 				D0B4D8E72295278700453315 /* Info.plist */,
+				D0B4D8F22295284000453315 /* TextViewWindowController.h */,
+				D0B4D8F02295284000453315 /* TextViewWindowController.m */,
+				D0B4D8F12295284000453315 /* TextViewWindowController.xib */,
+				D0B4D8F62295285400453315 /* ChangeableHeightTextView.h */,
+				D0B4D8F52295285400453315 /* ChangeableHeightTextView.m */,
 				D0B4D8E82295278700453315 /* main.m */,
 				D0B4D8EA2295278700453315 /* ChangeableHeightTextViewSample.entitlements */,
 			);
@@ -122,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B4D8F42295284000453315 /* TextViewWindowController.xib in Resources */,
 				D0B4D8E32295278700453315 /* Assets.xcassets in Resources */,
 				D0B4D8E62295278700453315 /* MainMenu.xib in Resources */,
 			);
@@ -134,8 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B4D8F72295285400453315 /* ChangeableHeightTextView.m in Sources */,
 				D0B4D8E92295278700453315 /* main.m in Sources */,
 				D0B4D8E12295278400453315 /* AppDelegate.m in Sources */,
+				D0B4D8F32295284000453315 /* TextViewWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
